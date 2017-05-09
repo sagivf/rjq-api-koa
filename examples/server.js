@@ -1,11 +1,12 @@
 const Koa = require('koa')
-const rjqApi = require('../index')
+const rjqApiKoa = require('../index')
+
 const app = new Koa()
 
 const { PORT = 4000 } = process.env
 
 app
-  .use(rjqApi('/rjq-api', {
+  .use(rjqApiKoa('/rjq-api', {
     queues: ['Mathematics', 'RegistrationEmail'],
     db: 'JobQueue'
   }))
