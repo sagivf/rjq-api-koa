@@ -1,6 +1,6 @@
 {
   "name": "rjq-api-koa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Koa middleware for rjq-api",
   "main": "index.js",
   "directories": {
