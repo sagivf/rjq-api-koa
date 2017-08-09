@@ -1,14 +1,13 @@
-const assert = require('assert')
 const Koa = require('koa')
 const Router = require('koa-router')
 const mount = require('koa-mount')
 const rjqApi = require('rjq-api')
 
-module.exports = function (path, options) {
+module.exports = function ({path = '/rjq-api', options} = {}) {
   const app = new Koa()
   const router = new Router()
-  assert(path, 'missing route path')
   const api = rjqApi(options)
+
   router
     .get('/', function (ctx) {
       ctx.body = 'v1.0.0'
