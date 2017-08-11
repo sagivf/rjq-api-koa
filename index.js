@@ -3,11 +3,12 @@ const Router = require('koa-router')
 const mount = require('koa-mount')
 const rjqApi = require('rjq-api')
 
-module.exports = function ({path = '/rjq-api', options} = {}) {
+module.exports = function ({path = '/rjq-api', connection, queues} = {}) {
   const app = new Koa()
   const router = new Router()
-  const api = rjqApi(options)
-
+  const api = rjqApi({
+    queues, connection
+  })
   router
     .get('/', function (ctx) {
       ctx.body = 'v1.0.0'
