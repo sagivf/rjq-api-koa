@@ -7,6 +7,7 @@
     "example": "examples"
   },
   "dependencies": {
+    "@koa/cors": "^2.2.1",
     "koa": "^2.3.0",
     "koa-mount": "^3.0.0",
     "koa-router": "^7.2.1",
